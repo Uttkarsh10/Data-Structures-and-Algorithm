@@ -1,0 +1,41 @@
+
+/* Link list Node 
+struct Node {
+    int data;
+    Node* next;
+    
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+    
+}; */
+
+int getMiddle(Node *head)
+{
+   if(head == NULL) return -1;
+   int sum=1;
+   Node* temp=head;
+   while(temp->next!=NULL){
+       temp = temp->next;
+       sum++;
+   }
+   temp->next =head;
+   int a =1;
+   if(sum%2!=0){
+       while(a<=sum/2){
+           temp=temp->next;
+           a++;
+       }
+       temp=temp->next;
+       return temp->data;
+   }
+   else {
+       while(a<=sum/2){
+           temp=temp->next;
+           a++;
+       }
+       temp=temp->next;
+       return temp->data;
+   }
+}
