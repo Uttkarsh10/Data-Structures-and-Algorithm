@@ -1,0 +1,24 @@
+ struct Node {
+  int data;
+  struct Node *next;
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};
+
+int getNthFromLast(Node *head, int n)
+{
+    int a =1;
+    Node *temp =head;
+    while(temp->next!= NULL){
+        temp=temp->next;
+        a++;
+    }
+    if(n>a) return -1;
+    temp = head;
+    int a1 =1;
+    while(a1<a-n+1){
+        temp=temp->next;
+        a1++;
+    }
