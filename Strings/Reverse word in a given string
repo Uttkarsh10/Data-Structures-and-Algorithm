@@ -1,0 +1,19 @@
+string reverseWords(string S) 
+{ 
+    vector<string> a;
+    string s="";
+    for(int i=0; S[i]!='\0';i++){
+        if(S[i]!='.') s += S[i];
+        else if(S[i]=='.'){
+            a.push_back(s);
+            s = "";
+        }
+    }
+    a.push_back(s);
+    string ans="";
+    for(int i = a.size()-1; i>0;i--){
+        ans += a[i]+'.';
+    }
+    ans += a[0];
+    return ans;
+}
