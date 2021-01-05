@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void permute(string str)
+{
+    sort(str.begin(), str.end());
+    do {
+       cout << str <<" ";
+    } while (next_permutation(str.begin(), str.end()));
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        string a;
+        cin>>a;
+        permute(a);
+        cout<<endl;
+    }
+}
