@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void longpalindrome(string str)
+{
+    int count =1;
+    vector<int> a;
+    a.push_back(1);
+    int j,k;
+    for(int i=1;str[i]!='\0';i++){
+        j=i-1;
+        k=i+1;
+        if(str[j]==str[k]){
+            while((str[j]==str[k])&&(j>=0&&k<str.length())){
+                count+=2;
+                j--;
+                k++;
+            }
+        }
+        else count =1;
+        a.push_back(count);
+        count =1;
+    }
+    int max=0,index;
+    for(int i=0;i<a.size();i++){
+        if(max<a[i]) {
+            max = a[i];
+            index=i;
+        }
+        else if(max==a[i]) continue;
+    }
+    for(int i=index-max/2;i<=index+max/2;i++){
+        cout<<str[i];
+    }
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        string b;
+        cin>>b;
+        longpalindrome(b);
+        cout<<endl;
+    }
+}
