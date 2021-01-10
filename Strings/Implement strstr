@@ -1,0 +1,19 @@
+int strstr(string s, string x)
+{
+    int count=0;
+    if(x.length()>s.length()) return -1;
+    
+    for(int i=0;s[i]!='\0';i++){
+        if(s[i]==x[0]){
+            int j=0;
+            count =0;
+            while(s[j+i]==x[j]&&s[j+i]!='\0'){
+                count++;
+                j++;
+            }
+            if(count == x.length()) return i;
+        }
+        else continue;
+    }
+    return -1;
+}
