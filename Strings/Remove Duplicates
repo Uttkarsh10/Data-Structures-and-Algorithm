@@ -1,0 +1,16 @@
+class Solution{
+public:	
+		
+	string removeDups(string S) 
+	{
+	    string ans= "";
+	    int arr[123] = {0};
+	    for(int i=0;i<S.length();i++){
+	        if(arr[S[i]]==0){
+	            arr[S[i]] = 1;
+	            ans += S[i];
+	        }
+	    }
+	    return ans;
+	}
+};
